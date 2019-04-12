@@ -1,0 +1,11 @@
+.example-card {
+    max-width: 200px;
+    float: left;
+    margin: 3%;
+    position: relative;
+  }
+  
+  .example-header-image {
+    //background-image: url('{{product.photo}}');
+    background-size: cover;
+  }

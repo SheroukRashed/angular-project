@@ -1,0 +1,21 @@
+<app-header-footer></app-header-footer>
+<div>
+<mat-divider></mat-divider>
+	<mat-card class="example-card">
+		<mat-card-header>
+			<div mat-card-avatar class="example-header-image"></div>
+			<mat-card-title>{{selectedProduct.name}}</mat-card-title>
+			<mat-card-subtitle>{{selectedProduct.price}} $</mat-card-subtitle>
+		</mat-card-header>
+		<img mat-card-image src="{{selectedProduct.photo}}" alt="Photo of a {{selectedProduct.name}}">
+    <mat-card-content>
+      <p>Description:     {{selectedProduct.description}}</p>
+      <p>Company:         {{selectedProduct.company}}</p>
+      <p>Production Year: {{selectedProduct.productionYear}}</p>
+      <p>Category:        {{selectedProduct.category}}</p>
+
+    </mat-card-content>
+		
+  </mat-card>
+</div>
+	

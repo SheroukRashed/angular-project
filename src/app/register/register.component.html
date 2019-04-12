@@ -1,0 +1,47 @@
+<h1 style="text-align:center">
+  E-Commerce website
+  </h1>
+  <div class="login">
+    <h2 class="login-header">Register</h2>
+    <form [formGroup]="registerForm" class="login-container" (ngSubmit)="register()">
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && registerForm.controls.username.errors }">
+        <input type="text" placeholder="UserName" formControlName="username">
+      </p>
+  
+      <div *ngIf="isSubmitted && registerForm.controls.username.errors" class="help-block">
+        <div *ngIf="registerForm.controls.username.errors.required">UserName is required</div>
+        <div *ngIf="registerForm.controls.username.errors.minlength">UserName minimum length is 6 chars</div>
+        <div *ngIf="registerForm.controls.username.errors.maxlength">UserName maximun length is 25 chars</div>
+      </div>
+
+      <p [ngClass]="{ 'has-error': isSubmitted && registerForm.controls.email.errors || inValidEmail  === true 
+    }">
+        <input type="email" placeholder="Email" formControlName="email">
+      </p>
+  
+      <div *ngIf="isSubmitted && registerForm.controls.email.errors" class="help-block">
+        <div *ngIf="registerForm.controls.email.errors.required">Email is required</div>
+        <div *ngIf="registerForm.controls.email.errors.email">Email formate is wrong</div>
+        
+      </div>
+      <div *ngIf="isSubmitted" class="help-block">
+        <div *ngIf="inValidEmail  === true ">This Email is already stored</div>
+      </div>
+
+      <p [ngClass]="{ 'has-error': isSubmitted && registerForm.controls.password.errors }">
+        <input type="password" placeholder="Password" formControlName="password">
+      </p>
+  
+      <div *ngIf="isSubmitted && registerForm.controls.password.errors" class="help-block">
+        <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+        <div *ngIf="registerForm.controls.password.errors.minlength">Password minimum length is 6 chars</div>
+      </div>
+  
+      <p>
+        <input type="submit" value="Register">
+      </p>
+      <button id="mybutton" (click)="router.navigateByUrl('/login');">Log In</button>
+    </form>
+  </div>
+  
