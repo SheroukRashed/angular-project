@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
   register(){
     this.isSubmitted = true;
     this.inValidEmail = this.emailDomainValidator(this.registerForm.controls.email.value);
-    console.log(this.inValidEmail);
+    //console.log(this.inValidEmail);
     if(this.registerForm.invalid || this.inValidEmail){
       return;
     }

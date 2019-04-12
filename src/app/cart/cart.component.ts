@@ -11,7 +11,7 @@ import { ProductService } from '../services/product.service';
 export class CartComponent implements OnInit {
   
   private items: Item[] = [];
-	private total: number = 0;
+  private total: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService) { }
@@ -83,4 +83,5 @@ export class CartComponent implements OnInit {
 		this.loadCart();
 	}
 
+	
 }

@@ -5,35 +5,28 @@
       <span class="example-fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-spacer"></span>
-      <button mat-button [matMenuTriggerFor]="menu_wishlist">Cart</button>
-      <button mat-button [matMenuTriggerFor]="menu_wishlist">Wish list</button>
+      <button mat-button (click)="items = getItems()" [matMenuTriggerFor]="cartmenu">Cart list</button>
+      <button mat-button [matMenuTriggerFor]="menu">Wish list</button>
       <a mat-button (click)="router.navigateByUrl('/home')">Home</a>
       <a mat-button (click)="authService.logout()">Logout</a>
-      <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button> -->
-  <mat-menu #menu_wishlist="matMenu">
+     
+  <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon>dialpad</mat-icon>
       <span>{{userService.getLoggedInUserbyId().wishListCounter}}</span>
     </button>
   </mat-menu>
 
-  <!-- <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
+  <mat-menu #cartmenu="matMenu">
+    <div  *ngFor="let item of items">
+      <button mat-menu-item>
+        <mat-icon><a (click)="remove(item.product.id)"><img style="width:25px;height:25px;background-size: cover;
+          " src="https://cdn1.iconfinder.com/data/icons/sharovar-outline/128/Delete-512.png"></a></mat-icon>
+        <span>{{item.product.name}}</span>
+      </button>
+    </div>
   </mat-menu>
-   -->
+  
 </mat-toolbar-row>
 
 

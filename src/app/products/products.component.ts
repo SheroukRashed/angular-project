@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
 
 	private products: Product[];
-
+	
 
 
 	constructor(
@@ -42,5 +43,6 @@ export class ProductsComponent implements OnInit {
 		users[index].wishListCounter = users[index].wishListCounter + 1;
 		localStorage.setItem('users', JSON.stringify(users));
 	}
+
 
 }
