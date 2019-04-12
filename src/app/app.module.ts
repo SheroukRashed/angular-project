@@ -11,6 +11,7 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { CustomMaterialModule } from './core/material.module';
 import { ProductsComponent } from './products/products.component';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { SingleproductComponent } from './singleproduct/singleproduct.component'
     RegisterComponent,
     HeaderFooterComponent,
     ProductsComponent,
-    SingleproductComponent
+    SingleproductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
-import { NewUser } from '../models/new-user';
+
 import { Router } from '@angular/router';
+import { User } from '../models/user';
+import { Newuser } from '../models/newuser';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class AuthService {
     }
   }
 
-  public register(userInfo: NewUser){
+  public register(userInfo: Newuser){
     let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
     let userData = {
       id : users.length + 1, 

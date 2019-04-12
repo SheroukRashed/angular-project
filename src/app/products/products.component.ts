@@ -29,6 +29,9 @@ export class ProductsComponent implements OnInit {
 	renderSingleProduct(id:string){
 		this.router.navigateByUrl('/singleproduct/'+id);
 	}
+	addToCart(id:string){
+		this.router.navigateByUrl('/cart/'+id);
+	}
 	updateWishListCounter(){
 		let loggedInUserId = this.userService.getLoggedInUserId();
 		let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
