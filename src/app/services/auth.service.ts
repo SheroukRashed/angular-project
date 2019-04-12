@@ -29,7 +29,9 @@ export class AuthService {
       id : users.length + 1, 
       username: userInfo.username,
       email: userInfo.email,
-      password: userInfo.password
+      password: userInfo.password,
+      wishListCounter:0
+
     };
       users.push(userData);
       localStorage.setItem('users', JSON.stringify(users));

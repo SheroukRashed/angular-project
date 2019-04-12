@@ -5,14 +5,21 @@
       <span class="example-fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-spacer"></span>
-      <button mat-button [matMenuTriggerFor]="menu">Cart</button>
-      <button mat-button [matMenuTriggerFor]="menu">Wish list</button>
+      <button mat-button [matMenuTriggerFor]="menu_wishlist">Cart</button>
+      <button mat-button [matMenuTriggerFor]="menu_wishlist">Wish list</button>
       <a mat-button (click)="router.navigateByUrl('/home')">Home</a>
       <a mat-button (click)="authService.logout()">Logout</a>
       <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button> -->
-  <mat-menu #menu="matMenu">
+  <mat-menu #menu_wishlist="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>{{userService.getLoggedInUserbyId().wishListCounter}}</span>
+    </button>
+  </mat-menu>
+
+  <!-- <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon>dialpad</mat-icon>
       <span>Redial</span>
@@ -26,6 +33,7 @@
       <span>Disable alerts</span>
     </button>
   </mat-menu>
+   -->
 </mat-toolbar-row>
 
 
